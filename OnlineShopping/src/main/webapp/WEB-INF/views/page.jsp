@@ -37,9 +37,19 @@
 		<%@include file="./shared/navbar.jsp"%>
 		<!-- Page Content -->
 	
-		<!-- Loading homepage here -->
+		<!-- Loading homepage Content here -->
 		<c:if test="${userClickHome == true }">
 			<%@include file="home.jsp"%>
+		</c:if>
+		
+		<!-- Loading about page here -->
+		<c:if test="${userClickAbout == true }">
+			<%@include file="about.jsp"%>
+		</c:if>
+		
+		<!-- Loading contact page here -->
+		<c:if test="${userClickContact == true }">
+			<%@include file="contact.jsp"%>
 		</c:if>
 	
 		<!-- Footer Section -->
