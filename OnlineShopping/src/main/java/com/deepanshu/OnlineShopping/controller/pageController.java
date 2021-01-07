@@ -7,10 +7,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class pageController {
 
-	@RequestMapping(value= {"/","/home","/index"})
+	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","Welcome to Spring");
+		mv.addObject("title", "Home");
+		mv.addObject("userClickHome", true);
 		return mv;
 	}
 
