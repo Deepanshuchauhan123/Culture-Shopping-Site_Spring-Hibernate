@@ -14,7 +14,15 @@
 		<spring.version>4.3.6.RELEASE</spring.version>
 	</properties>
 
-	<dependencies>
+	<dependencies> 
+
+		<!-- Link BAckend project -->
+		<dependency>
+			<groupId>com.deepanshu</groupId>
+			<artifactId>ShoppingBackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- javaee-api -->
 		<dependency>
 			<groupId>javax</groupId>
