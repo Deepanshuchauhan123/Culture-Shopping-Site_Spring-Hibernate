@@ -3,7 +3,7 @@ package com.deepanshu.ShoppingBackend.dto;
 public class Category {
 
 	/*
-	 * priavte fields
+	 * private fields
 	 */
 
 	private int id;

@@ -25,15 +25,15 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 		category = new Category();
 
-		category.setId(1);
+		category.setId(2);
 		category.setName("Mobile");
-		category.setDescription("THis is desp of Mobile");
+		category.setDescription("This is desp of Mobile");
 		category.setImageURL("url-img.jsp");
 
 		categories.add(category);
 		category = new Category();
 
-		category.setId(1);
+		category.setId(3);
 		category.setName("Laptop");
 		category.setDescription("THis is desp of lapi");
 		category.setImageURL("url-img.jsp");
@@ -41,7 +41,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 		categories.add(category);
 		category = new Category();
 
-		category.setId(1);
+		category.setId(4);
 		category.setName("Books");
 		category.setDescription("THis is desp of books");
 		category.setImageURL("url-img.jsp");
@@ -53,6 +53,18 @@ public class CategoryDAOImpl implements CategoryDAO {
 	public List<Category> list() {
 
 		return categories;
+	}
+
+	@Override
+	public Category get(int id) {
+		
+		// enhanced for loop
+
+		for (Category category : categories) {
+			if (category.getId() == id)
+				return category;
+		}
+		return null;
 	}
 
 }

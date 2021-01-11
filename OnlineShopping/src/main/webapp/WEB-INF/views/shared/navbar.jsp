@@ -15,7 +15,7 @@
 				-->
 				<li class="nav-item" id="listproducts">
 				<a class="nav-link"
-					href="${contextRoot}/listproducts">View Products</a>
+					href="${contextRoot}/show/all/products">View Products</a>
 				</li>
 				
 				<li  class="nav-item" id="contact">
