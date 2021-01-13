@@ -13,3 +13,4 @@
 		<mapping package="com.deepanshu.ShoppingBackend.dto"/>
 	</session-factory>
 </hibernate-configuration>
+ 

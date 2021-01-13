@@ -5,6 +5,8 @@ import java.util.List;
 import com.deepanshu.ShoppingBackend.dto.Category;
 
 public interface CategoryDAO {
+	
+	boolean add(Category category);
 
 	List<Category> list();
 
