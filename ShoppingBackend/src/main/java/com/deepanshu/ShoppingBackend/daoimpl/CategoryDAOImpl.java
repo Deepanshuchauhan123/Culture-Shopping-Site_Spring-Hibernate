@@ -16,7 +16,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	private static List<Category> categories = new ArrayList<>();
 
-	@Autowired
+	//@Autowired
 	private SessionFactory sessionFactory;
 
 	static {
