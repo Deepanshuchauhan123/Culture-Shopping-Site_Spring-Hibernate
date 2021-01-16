@@ -12,6 +12,7 @@ import com.deepanshu.ShoppingBackend.dao.CategoryDAO;
 import com.deepanshu.ShoppingBackend.dto.Category;
 
 @Repository("categoryDAO")
+@Transactional
 public class CategoryDAOImpl implements CategoryDAO {
 
 	private static List<Category> categories = new ArrayList<>();
@@ -74,7 +75,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	}
 
 	@Override
-	@Transactional
+//	@Transactional
 	public boolean add(Category category) {
 		try {
 			// add the category to the database table
@@ -82,6 +83,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 			return true;
 
 		} catch (Exception e) {
+			//System.out.println("Exception hhhhhhhhhhhhhhhhhh");
 			e.printStackTrace();
 			return false;
 		}

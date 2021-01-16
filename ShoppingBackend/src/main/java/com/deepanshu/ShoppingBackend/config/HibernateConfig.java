@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -25,17 +26,29 @@ public class HibernateConfig {
 	private final static String DATABASE_PASSWORD = "";
 
 	// Datasource bean will be available
-	@Bean
-	private DataSource getDataSource() {
+	@Bean("dataSource")
+	public DataSource getDataSource() {
 
 		BasicDataSource dataSource = new BasicDataSource();
 
+		// Providing the database connection information
 		dataSource.setDriverClassName(DATABASE_DRIVER);
 		dataSource.setUrl(DATABASE_URL);
 		dataSource.setUsername(DATABASE_USERNAME);
 		dataSource.setPassword(DATABASE_PASSWORD);
 
 		return dataSource;
+	}
+
+	@Bean
+	public LocalSessionFactoryBean sessionFactory() {
+		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+		sessionFactory.setDataSource(getDataSource());
+		sessionFactory.setPackagesToScan("com.deepanshu.ShoppingBackend.dto");
+
+		sessionFactory.setHibernateProperties(getHibernateProperties());
+
+		return sessionFactory;
 	}
 
 	// sessionfactory
@@ -57,14 +70,15 @@ public class HibernateConfig {
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", DATABASE_DIALECT);
 		properties.put("hibernate.show_sql", true);
+		properties.put("hibernate.format_sql", "true");
 
-		return null;
+		return properties;
 	}
 
 	// transaction manager bean
 	@Bean
 	public HibernateTransactionManager geTransactionManager(SessionFactory sessionFactory) {
-		HibernateTransactionManager transactionManager = new HibernateTransactionManager();
+		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 
 		return transactionManager;
 	}

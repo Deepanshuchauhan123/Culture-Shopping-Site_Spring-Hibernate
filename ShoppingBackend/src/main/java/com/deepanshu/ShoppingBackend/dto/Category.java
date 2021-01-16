@@ -1,5 +1,7 @@
 package com.deepanshu.ShoppingBackend.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,11 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Category {
+public class Category implements Serializable{
 
 	/*
 	 * private fields
 	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +29,12 @@ public class Category {
 
 	@Column(name = "is_active")
 	private boolean active = true;
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
+				+ ", active=" + active + "]";
+	}
 
 	public int getId() {
 		return id;
@@ -67,10 +76,10 @@ public class Category {
 		this.active = active;
 	}
 
-	@Override
-	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageURL=" + imageURL
-				+ ", active=" + active + "]";
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
+
+	
 
 }
