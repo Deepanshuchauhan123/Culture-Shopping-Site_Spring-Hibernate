@@ -12,7 +12,7 @@
    ">
 
 	<context:component-scan
-		base-package="com.deepanshu.OnlineShopping" />
+		base-package="com.deepanshu.OnlineShopping.controller" />
 	<!-- backend dao impl -->
 	  <context:component-scan
 		base-package="com.deepanshu.ShoppingBackend" />

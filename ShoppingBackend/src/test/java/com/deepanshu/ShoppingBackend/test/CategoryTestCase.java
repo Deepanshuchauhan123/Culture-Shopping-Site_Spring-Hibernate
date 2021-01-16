@@ -82,6 +82,8 @@ public class CategoryTestCase {
 
 	@Test
 	public void testCRUDCategory() {
+
+		// 1.adding new category
 		category = new Category();
 
 		category.setName("Laptop");
@@ -97,6 +99,24 @@ public class CategoryTestCase {
 		category.setImageURL("television-img.jsp");
 
 		assertEquals("Successfully added a category inside the table!", true, categoryDAO.add(category));
+
+		
+		
+		// 2.fetching and updating category
+		category = categoryDAO.get(2);
+		category.setName("TV");
+
+		assertEquals("Successfully updated a category in the table!", true, categoryDAO.update(category));
+
+		
+		
+		// 3.deleting the category
+		assertEquals("Successfully Deleted a category in the table!", true, categoryDAO.delete(category));
+
+		
+		
+		// 4.fetching the list
+		assertEquals("Successfully Fetched list  of category from the table!", 1, categoryDAO.list().size());
 
 	}
 
