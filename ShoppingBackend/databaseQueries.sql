@@ -10,3 +10,5 @@ CREATE TABLE category(
 );
 
 INSERT INTO category(name,description,image_url,is_active) VALUES('Mobile','This is mobile desc','cat_34.jpg',true);
+
+INSERT INTO category(name,description,image_url,is_active) VALUES('Headphone','This is headphones desc','cat_34.jpg',true);
