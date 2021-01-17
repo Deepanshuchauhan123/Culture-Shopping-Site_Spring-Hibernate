@@ -15,12 +15,12 @@ $(function() {
 		break;
 
 	default:
-		{
+		if (menu == "Home")
+			break;
 		$('#listproducts').addClass('active');
-		$('#a_'+menu).addClass('active');
+		$('#a_' + menu).addClass('active');
 		break;
+
 	}
-	
-	}
-	 //window.alert(menu);
+	// window.alert(menu);
 });
