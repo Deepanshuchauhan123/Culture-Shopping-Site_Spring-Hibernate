@@ -18,8 +18,8 @@ public class Product {
 	private String name;
 	private String brand;
 	private String description;
-	@Column(name = "unit_prize")
-	private double unitPrize;
+	@Column(name = "unit_price")
+	private double unitPrice;
 	private int quantity;
 	@Column(name = "is_active")
 	private boolean active;
@@ -75,12 +75,12 @@ public class Product {
 		this.description = description;
 	}
 
-	public double getUnitPrize() {
-		return unitPrize;
+	public double getUnitPrice() {
+		return unitPrice;
 	}
 
-	public void setUnitPrize(double unitPrize) {
-		this.unitPrize = unitPrize;
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
 	}
 
 	public int getQuantity() {
@@ -131,4 +131,13 @@ public class Product {
 		this.views = views;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="
+				+ description + ", unitPrice=" + unitPrice + ", quantity=" + quantity + ", active=" + active
+				+ ", categoryId=" + categoryId + ", supplierId=" + supplierId + ", purchases=" + purchases + ", views="
+				+ views + "]";
+	}
+
+	
 }
