@@ -75,6 +75,8 @@
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 
+		<!-- Datatable plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
