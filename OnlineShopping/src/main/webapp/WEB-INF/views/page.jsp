@@ -24,13 +24,23 @@
 
 <script>
 	window.menu = '${title}';
+	window.contextRoot ='${contextRoot}'
 </script>
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
-<!-- Bootstrap core CSS -->
+<!-- Bootstrap readable theme CSS -->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+
+<!-- Bootstrap DataTables 
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
+-->
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.css" />
+
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -75,9 +85,18 @@
 		<script src="${js}/jquery.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 
-		<!-- Datatable plugin -->
+		<!-- DataTable Plugin 
 		<script src="${js}/jquery.dataTables.js"></script>
-
+-->
+		<!-- DataTable Bootstrap Script 
+		<script src="${js}/dataTables.bootstrap.js"></script>
+-->
+		<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+		<script type="text/javascript"
+			src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.js"></script>
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
 	</div>
