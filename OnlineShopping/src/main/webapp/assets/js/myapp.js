@@ -29,36 +29,46 @@ $(function() {
 
 	// execute the below code only where we have this table
 
-	if ($table.length) {
-
-		// console.log('inside the table!');
+	if ($table.length) 
+	{
 
 		var jsonUrl = '';
-		if (window.categoryId == '') {
-			jsonUrl = window.contextRoot + 'json/data/all/products';
-		} else {
-			jsonUrl = window.contextRoot + 'json/data/category/'
+		
+		if (window.categoryId == '') 
+		{
+			jsonUrl = window.contextRoot + '/json/data/all/products';
+		} else 
+		{
+			jsonUrl = window.contextRoot + '/json/data/category/'
 					+ window.categoryId + '/products';
-
 		}
 
-		$table
-				.DataTable({
+		$table.DataTable(
+				{
 
-					lengthMenu : [
-							[ 3, 5, 10, -1 ],
-							[ '3 Records', '5 Records', '10 Records',
-									'All Records' ] ],
+					lengthMenu : [[ 3, 5, 10, -1 ],[ '3 Records', '5 Records', '10 Records','All Records' ] ],
 					pageLength : 5,
-					ajax : {
+					ajax : 
+					{
 						url : jsonUrl,
 						dataSrc : ''
 					},
-					columns : [ 
-						{
+					
+					columns : 
+						[ 
+							{
 							data : 'name',
-						}
-					]
+							}, 
+							{
+							data : 'brand',
+							}, 
+							{
+							data : 'unitPrice',
+							}, 
+							{
+							data : 'quantity',
+							}
+						]
 				});
 	}
 
