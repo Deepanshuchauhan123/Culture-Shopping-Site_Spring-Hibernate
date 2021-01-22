@@ -73,7 +73,7 @@ $(function() {
 							{
 							data : 'quantity',
 							},
-							{
+							{	
 								data: 'id',
 								bSortable : false,
 								mRender: function(data,type,row)
