@@ -1,3 +1,4 @@
+
 $(function() {
 	// solving active menu problem
 	switch (menu) {
@@ -64,9 +65,35 @@ $(function() {
 							}, 
 							{
 							data : 'unitPrice',
+							mRender: function(data, type,row){
+								return '&#8377; ' + data
+							}
+							
 							}, 
 							{
 							data : 'quantity',
+							},
+							{
+								data: 'id',
+								bSortable : false,
+								mRender: function(data,type,row)
+								{
+									var str ='';
+									str += '<a href="'
+										+ window.contextRoot
+										+ '/show/'
+										+ data
+										+ '/product" class="btn btn-outline-primary"><i class="fa fa-fw fa-eye"></i></a> &#160; &#160; &#160; &#160;';
+									
+									str += '<a href="'
+										+ window.contextRoot
+										+ '/cart/add/'
+										+ data
+										+ '/product" class="btn btn-outline-primary"><i class="fa fa-fw fa-shopping-cart"></i></a>';
+									
+									return str;
+								
+								}
 							}
 						]
 				});

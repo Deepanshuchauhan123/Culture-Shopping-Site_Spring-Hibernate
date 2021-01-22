@@ -59,6 +59,7 @@
 								<th>Brand</th>
 								<th>Price</th>
 								<th>Qty. Availabe</th>
+								<th></th>
 							</tr>
 						</thead>
 
@@ -68,6 +69,7 @@
 								<th>Brand</th>
 								<th>Price</th>
 								<th>Qty. Availabe</th>
+								<th></th>
 							</tr>
 						</tfoot>
 					</table>
