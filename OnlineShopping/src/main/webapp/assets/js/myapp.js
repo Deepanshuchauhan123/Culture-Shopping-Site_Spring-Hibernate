@@ -58,6 +58,18 @@ $(function() {
 					columns : 
 						[ 
 							{
+								
+								data : 'code',
+								/*bSortable : false,
+								mRender : function(data, type, row) {
+									window.alert(data);
+									return '<img src="' + window.contextRoot
+											+ '/resources/images/' + data
+											+ '.jpg"/>';
+
+								}*/
+							},
+							{
 							data : 'name',
 							}, 
 							{
