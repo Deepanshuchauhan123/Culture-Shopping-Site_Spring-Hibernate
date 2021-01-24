@@ -60,14 +60,14 @@ $(function() {
 							{
 								
 								data : 'code',
-								/*bSortable : false,
+								bSortable : false,
 								mRender : function(data, type, row) {
-									window.alert(data);
+		
 									return '<img src="' + window.contextRoot
 											+ '/resources/images/' + data
-											+ '.jpg"/>';
+											+ '.jpg" style="width:100px;height:100px;"/>';
 
-								}*/
+								}
 							},
 							{
 							data : 'name',
