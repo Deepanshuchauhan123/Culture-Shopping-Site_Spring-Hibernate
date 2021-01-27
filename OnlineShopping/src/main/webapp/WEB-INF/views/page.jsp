@@ -51,7 +51,6 @@
 
 <body style="padding-top: 60px;
 	height: 100%;">
-	l̥
 	<div class="wrapper">
 
 		<!-- Navigation -->
