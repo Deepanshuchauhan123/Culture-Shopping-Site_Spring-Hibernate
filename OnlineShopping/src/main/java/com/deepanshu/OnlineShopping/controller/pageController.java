@@ -1,5 +1,7 @@
 package com.deepanshu.OnlineShopping.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,8 @@ import com.deepanshu.ShoppingBackend.dto.Product;
 
 @Controller
 public class pageController {
+
+	private static final Logger logger = LoggerFactory.getLogger(pageController.class);
 
 	@Autowired
 	private CategoryDAO categoryDAO;
@@ -101,7 +105,7 @@ public class pageController {
 
 		mv.addObject("title", product.getName());
 		mv.addObject("product", product);
-		
+
 		mv.addObject("userClickShowProduct", true);
 
 		return mv;
