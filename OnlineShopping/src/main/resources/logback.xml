@@ -10,11 +10,11 @@
 		</encoder>
 	</appender>
 
-	<logger name="com.deepanshu" level="INFO">
+	<logger name="com.deepanshu" level="DEBUG" additivity= "false" >
 		<appender-ref ref="consoleAppender" />
 	</logger>
 
-	<root>
+	<root level="INFO">
 		<appender-ref ref="consoleAppender" />
 	</root>
 

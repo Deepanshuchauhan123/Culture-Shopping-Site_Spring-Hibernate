@@ -29,6 +29,9 @@ public class pageController {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Home");
 
+		logger.info("Inside PageController index method - INFO");
+		logger.info("Inside pageControler index method  - DEBUG");
+		
 		// passing the list categories
 		mv.addObject("categories", categoryDAO.list());
 
