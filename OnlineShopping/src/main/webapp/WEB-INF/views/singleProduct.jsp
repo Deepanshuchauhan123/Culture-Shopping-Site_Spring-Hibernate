@@ -43,15 +43,41 @@
 			<h4>
 				Price: <strong>&#8377; ${product.unitPrice} /-</strong>
 			</h4>
-			<hr/>
+			<hr />
 
-			<h6>Qty. Available: ${product.quantity}</h6>
 
-			<!-- Add to cart Button -->
-			<a href="${contextRoot}/cart/add/${product.id}/product"
-				class="btn btn-success"><i
-				class="fa fa-fw fa-shopping-cart"></i> Add to Cart
-			</a> 
+
+			<!-- Showing product quantity if 0 then out of stock else product quantity -->
+			<c:choose>
+				<c:when test="${product.quantity<1}">
+					<h6>
+						Qty. Available: <span style="color: red">Out of stock!</span>
+					</h6>
+				</c:when>
+				<c:otherwise>
+					<h6>Qty. Available: ${product.quantity}</h6>
+
+				</c:otherwise>
+			</c:choose>
+			<!-- if no product available then add to cart disabled -->
+			<c:choose>
+				<c:when test="${product.quantity<1}">
+					<!-- Disabled Add to cart Button -->
+					<a href="javascript:void(0)" class="btn btn-success disabled"><del>
+							<i class="fa fa-fw fa-shopping-cart"></i> Add to Cart
+						</del> </a>
+
+				</c:when>
+				<c:otherwise>
+					<!-- Add to cart Button -->
+					<a href="${contextRoot}/cart/add/${product.id}/product"
+						class="btn btn-success"><i class="fa fa-fw fa-shopping-cart"></i>
+						Add to Cart </a>
+
+				</c:otherwise>
+			</c:choose>
+
+
 			<!-- Back button -->
 			<a href="${contextRoot}/show/all/products" class="btn btn-success">Back</a>
 
