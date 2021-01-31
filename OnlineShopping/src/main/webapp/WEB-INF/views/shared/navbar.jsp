@@ -9,10 +9,7 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
-				<!--  <li class="nav-item active"><a class="nav-link" href="#">Home
-						<span class="sr-only">(current)</span></a> 
-				</li>
-				-->
+			
 				<li class="nav-item" id="listproducts">
 				<a class="nav-link"
 					href="${contextRoot}/show/all/products">View Products</a>
@@ -26,6 +23,10 @@
 				<li class="nav-item" id="about">
 				<a class="nav-link"
 					href="${contextRoot}/about">About</a>
+				</li>
+				<li class="nav-item" id="manageproducts">
+				<a class="nav-link"
+					href="${contextRoot}/manage/products">Manage Products</a>
 				</li>
 				
 			</ul>

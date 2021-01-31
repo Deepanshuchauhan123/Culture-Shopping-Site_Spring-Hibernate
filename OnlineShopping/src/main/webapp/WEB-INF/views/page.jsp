@@ -41,7 +41,9 @@
 
 <!-- Font Awesome 
 <link href="${css}/bootstrap.min.css" rel="stylesheet">-->
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	type="text/css" rel="stylesheet">
 
 
 <!-- Custom styles for this template 
@@ -49,8 +51,7 @@
 
 </head>
 
-<body style="padding-top: 60px;
-	height: 100%;">
+<body style="padding-top: 60px; height: 100%;">
 	<div class="wrapper">
 
 		<!-- Navigation -->
@@ -78,11 +79,14 @@
 				test="${userClickAllProducts == true or userClickCategoryProducts == true }">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
-			
+
 			<!-- Loading single products page here -->
-			<c:if
-				test="${userClickShowProduct == true}">
+			<c:if test="${userClickShowProduct == true}">
 				<%@include file="singleProduct.jsp"%>
+			</c:if>
+
+			<c:if test="${userClickManageProducts ==true}">
+				<%@ include file="manageProducts.jsp"%>
 			</c:if>
 		</div>
 		<!-- Footer Section -->
