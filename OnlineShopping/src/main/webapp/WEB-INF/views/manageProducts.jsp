@@ -101,6 +101,8 @@
 								<select name="categoryId" id="categoryId">
 									<option value="1">Category One</option>
 									<option value="2">Category Two</option>
+									<option value="3">Category Three</option>
+									<option value="4">Category Four</option>
 								</select>
 							</div>
 
