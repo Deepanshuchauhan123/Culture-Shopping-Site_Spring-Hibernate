@@ -1,3 +1,4 @@
+<%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <div class="container">
 
 	<div class="row">
@@ -49,10 +50,69 @@
 
 						<div class="form-group">
 
+							<label class="control-label col-md-4" for="description">Product
+								Description: </label>
+
+							<div class="col-md-8">
+
+								<textarea name="description" id="description" rows="4"
+									placeholder="Write a description here" class="form-control"></textarea>
+
+							</div>
+
+						</div>
+						<div class="form-group">
+
+							<label class="control-label col-md-4" for="unitPrice">Enter
+								Unit Prize: </label>
+
+							<div class="col-md-8">
+
+								<input type="number" name="unitPrice" id="unitPrice"
+									placeholder="Unit Price in &#8377" class="form-control" /> <em
+									style="color: #ff0000">Please enter Unit Price!</em>
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
+
+							<label class="control-label col-md-4" for="quantity">Enter
+								Quantity Available: </label>
+
+							<div class="col-md-8">
+
+								<input type="number" name="quantity" id="quantity"
+									placeholder="Quantity Available" class="form-control" /> <em
+									style="color: #ff0000">Please enter Quantity Available!</em>
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
+
+							<label class="control-label col-md-4" for="categoryId">Select
+								Category: </label>
+
+							<div class="col-md-8">
+
+								<select name="categoryId" id="categoryId">
+									<option value="1">Category One</option>
+									<option value="2">Category Two</option>
+								</select>
+							</div>
+
+						</div>
+
+
+						<div class="form-group">
+
 							<div class="col-md-offset-4 col-md-8">
 
-								<input type="submit" name="submit" id="submit"
-									value="Submit" class="btn btn-primary" />
+								<input type="submit" name="submit" id="submit" value="Submit"
+									class="btn btn-primary" />
 
 
 
