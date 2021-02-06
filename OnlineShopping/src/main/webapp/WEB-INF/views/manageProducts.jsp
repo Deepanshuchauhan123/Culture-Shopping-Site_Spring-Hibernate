@@ -15,7 +15,7 @@
 				<div class="panel-body">
 
 					<!-- Form Elements -->
-					<form class="form-horizontal">
+					<sf:form class="form-horizontal" modelAttribute="product">
 
 						<div class="form-group">
 
@@ -24,9 +24,9 @@
 
 							<div class="col-md-8">
 
-								<input type="text" name="name" id="name"
-									placeholder="Product Name" class="form-control" /> <em
-									class="help-block" style="color: #ff0000">Please enter
+								<sf:input type="text" path="name" id="name"
+									placeholder="Product Name" class="form-control" />
+								<em class="help-block" style="color: #ff0000">Please enter
 									Product Name!</em>
 
 							</div>
@@ -40,9 +40,9 @@
 
 							<div class="col-md-8">
 
-								<input type="text" name="brand" id="brand"
-									placeholder="Brand Name" class="form-control" /> <em
-									style="color: #ff0000">Please enter Brand Name!</em>
+								<sf:input type="text" path="brand" id="brand"
+									placeholder="Brand Name" class="form-control" />
+								<em style="color: #ff0000">Please enter Brand Name!</em>
 
 							</div>
 
@@ -55,8 +55,8 @@
 
 							<div class="col-md-8">
 
-								<textarea name="description" id="description" rows="4"
-									placeholder="Write a description here" class="form-control"></textarea>
+								<sf:textarea path="description" id="description" rows="4"
+									placeholder="Write a description here" class="form-control"></sf:textarea>
 
 							</div>
 
@@ -68,9 +68,9 @@
 
 							<div class="col-md-8">
 
-								<input type="number" name="unitPrice" id="unitPrice"
-									placeholder="Unit Price in &#8377" class="form-control" /> <em
-									style="color: #ff0000">Please enter Unit Price!</em>
+								<sf:input type="number" path="unitPrice" id="unitPrice"
+									placeholder="Unit Price in &#8377" class="form-control" />
+								<em style="color: #ff0000">Please enter Unit Price!</em>
 
 							</div>
 
@@ -83,9 +83,9 @@
 
 							<div class="col-md-8">
 
-								<input type="number" name="quantity" id="quantity"
-									placeholder="Quantity Available" class="form-control" /> <em
-									style="color: #ff0000">Please enter Quantity Available!</em>
+								<sf:input type="number" path="quantity" id="quantity"
+									placeholder="Quantity Available" class="form-control" />
+								<em style="color: #ff0000">Please enter Quantity Available!</em>
 
 							</div>
 
@@ -98,12 +98,11 @@
 
 							<div class="col-md-8">
 
-								<select name="categoryId" id="categoryId">
-									<option value="1">Category One</option>
-									<option value="2">Category Two</option>
-									<option value="3">Category Three</option>
-									<option value="4">Category Four</option>
-								</select>
+								<sf:select path ="categoryId" id="categoryId"
+								items= "${categories}"
+								itemLabel="name"
+								itemValue="id"									
+								/>
 							</div>
 
 						</div>
@@ -115,14 +114,20 @@
 
 								<input type="submit" name="submit" id="submit" value="Submit"
 									class="btn btn-primary" />
-
+								<!--  Hidden field for not changing values after edit form -->
+								<sf:hidden path="id" />
+								<sf:hidden path="code" />
+								<sf:hidden path="supplierId" />
+								<sf:hidden path="active" />
+								<sf:hidden path="purchases" />
+								<sf:hidden path="views" />
 
 
 							</div>
 
 						</div>
 
-					</form>
+					</sf:form>
 
 				</div>
 
