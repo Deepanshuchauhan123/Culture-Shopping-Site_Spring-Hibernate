@@ -15,7 +15,8 @@
 				<div class="panel-body">
 
 					<!-- Form Elements -->
-					<sf:form class="form-horizontal" modelAttribute="product">
+					<sf:form class="form-horizontal" modelAttribute="product"
+						action="${contextRoot}/manage/products" method="POST">
 
 						<div class="form-group">
 
@@ -98,11 +99,8 @@
 
 							<div class="col-md-8">
 
-								<sf:select path ="categoryId" id="categoryId"
-								items= "${categories}"
-								itemLabel="name"
-								itemValue="id"									
-								/>
+								<sf:select path="categoryId" id="categoryId"
+									items="${categories}" itemLabel="name" itemValue="id" />
 							</div>
 
 						</div>
