@@ -2,6 +2,8 @@ package com.deepanshu.OnlineShopping.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,6 +26,8 @@ public class ManagementController {
 	
 	@Autowired
 	private ProductDAO productDAO;
+	
+	private static final Logger logger = LoggerFactory.getLogger(ManagementController.class);
 
 	@RequestMapping(value="/products",method=RequestMethod.GET)
 	public ModelAndView showManageProducts(@RequestParam(name="operation",required=false)String operation)
@@ -44,7 +48,7 @@ public class ManagementController {
 		if(operation!=null)
 		{
 			if(operation.equals("product")) {
-				mv.addObject("message", "Product Submitted Successfully");
+				mv.addObject("message", "Product Submitted Successfully!");
 			}
 		}
 		
@@ -56,6 +60,7 @@ public class ManagementController {
 	public String handleProductSubmission(@ModelAttribute("product")Product mProduct)
 	{
 		
+		logger.info(mProduct.toString());
 		//create a new product record
 		productDAO.add(mProduct);
 		

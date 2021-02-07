@@ -2,10 +2,19 @@
 <div class="container">
 
 	<div class="row">
-	<div class="col-xs-12">
 	
-	
-	</div>
+	<c:if test="${not empty message}">
+		<div class="col-xs-12">
+		
+			<div class="alert alert-success alert-dismissible">
+			
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				${message}
+				
+			</div>
+		
+		</div>
+	</c:if>
 
 		<div class="col-md-offset-2 col-md-8">
 
