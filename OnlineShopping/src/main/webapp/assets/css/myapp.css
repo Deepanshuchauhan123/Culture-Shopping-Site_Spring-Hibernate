@@ -28,6 +28,7 @@ body {
 	heigth: 30px;
 	width: 60%;
 }
-
-
-
+/* overridden css */
+.help-block {
+	color: #ff0000;
+}

@@ -2,19 +2,19 @@
 <div class="container">
 
 	<div class="row">
-	
-	<c:if test="${not empty message}">
-		<div class="col-xs-12">
-		
-			<div class="alert alert-success alert-dismissible">
-			
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				${message}
-				
+
+		<c:if test="${not empty message}">
+			<div class="col-xs-12">
+
+				<div class="alert alert-success alert-dismissible">
+
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					${message}
+
+				</div>
+
 			</div>
-		
-		</div>
-	</c:if>
+		</c:if>
 
 		<div class="col-md-offset-2 col-md-8">
 
@@ -40,8 +40,7 @@
 
 								<sf:input type="text" path="name" id="name"
 									placeholder="Product Name" class="form-control" />
-								<em class="help-block" style="color: #ff0000">Please enter
-									Product Name!</em>
+								<sf:errors path="name" style="color: #ff0000;" element="em" />
 
 							</div>
 
@@ -56,8 +55,7 @@
 
 								<sf:input type="text" path="brand" id="brand"
 									placeholder="Brand Name" class="form-control" />
-								<em style="color: #ff0000">Please enter Brand Name!</em>
-
+								<sf:errors path="brand" style="color: #ff0000;" element="em" />
 							</div>
 
 						</div>
@@ -71,7 +69,7 @@
 
 								<sf:textarea path="description" id="description" rows="4"
 									placeholder="Write a description here" class="form-control"></sf:textarea>
-
+								<sf:errors path="description" style="color: #ff0000;" element="em" />
 							</div>
 
 						</div>
@@ -84,8 +82,7 @@
 
 								<sf:input type="number" path="unitPrice" id="unitPrice"
 									placeholder="Unit Price in &#8377" class="form-control" />
-								<em style="color: #ff0000">Please enter Unit Price!</em>
-
+								<sf:errors path="unitPrice" style="color: #ff0000;" element="em" />
 							</div>
 
 						</div>
@@ -99,7 +96,7 @@
 
 								<sf:input type="number" path="quantity" id="quantity"
 									placeholder="Quantity Available" class="form-control" />
-								<em style="color: #ff0000">Please enter Quantity Available!</em>
+								<!--<em style="color: #ff0000">Please enter Quantity Available!</em>-->
 
 							</div>
 
