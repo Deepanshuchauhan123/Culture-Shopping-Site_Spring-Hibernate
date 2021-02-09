@@ -75,6 +75,8 @@ public class ManagementController {
 		logger.info(mProduct.toString());
 		// create a new product record
 		productDAO.add(mProduct);
+		
+		
 
 		return "redirect:/manage/products?operation=product";
 

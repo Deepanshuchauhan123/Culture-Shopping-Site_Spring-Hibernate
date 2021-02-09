@@ -29,7 +29,8 @@
 
 					<!-- Form Elements -->
 					<sf:form class="form-horizontal" modelAttribute="product"
-						action="${contextRoot}/manage/products" method="POST">
+						action="${contextRoot}/manage/products" method="POST"
+						enctype="multipart/form-data">
 
 						<div class="form-group">
 
@@ -69,7 +70,8 @@
 
 								<sf:textarea path="description" id="description" rows="4"
 									placeholder="Write a description here" class="form-control"></sf:textarea>
-								<sf:errors path="description" style="color: #ff0000;" element="em" />
+								<sf:errors path="description" style="color: #ff0000;"
+									element="em" />
 							</div>
 
 						</div>
@@ -97,6 +99,21 @@
 								<sf:input type="number" path="quantity" id="quantity"
 									placeholder="Quantity Available" class="form-control" />
 								<!--<em style="color: #ff0000">Please enter Quantity Available!</em>-->
+
+							</div>
+
+						</div>
+
+						<!-- File element for image upload -->
+						<div class="form-group">
+
+							<label class="control-label col-md-4" for="file">Select
+								an Image: </label>
+
+							<div class="col-md-8">
+
+								<sf:input type="number" path="file" id="file"
+									class="form-control" />
 
 							</div>
 
