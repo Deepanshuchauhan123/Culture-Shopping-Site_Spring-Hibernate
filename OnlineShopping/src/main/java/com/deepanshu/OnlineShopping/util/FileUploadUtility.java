@@ -1,5 +1,8 @@
 package com.deepanshu.OnlineShopping.util;
 
+import java.io.File;
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -17,6 +20,29 @@ public class FileUploadUtility {
 		// get real path
 		REAL_PATH = request.getSession().getServletContext().getRealPath("/assets/images/");
 
+		logger.info(REAL_PATH);
+
+		// to make sure all the directory exists
+		// please create the directories
+		if (!new File(ABS_PATH).exists()) {
+			// create the directories
+			new File(ABS_PATH).mkdirs();
+
+		}
+
+		if (!new File(REAL_PATH).exists()) {
+			// create the directories
+			new File(REAL_PATH).mkdirs();
+
+		}
+		try {
+			// server upload
+			file.transferTo(new File(REAL_PATH + code + ".jpg"));
+			// project directory upload
+			file.transferTo(new File(ABS_PATH + code + ".jpg"));
+		} catch (IOException ex) {
+
+		}
 	}
 
 }
