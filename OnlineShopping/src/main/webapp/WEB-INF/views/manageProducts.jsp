@@ -112,7 +112,7 @@
 
 							<div class="col-md-8">
 
-								<sf:input type="number" path="file" id="file"
+								<sf:input type="file" path="file" id="file"
 									class="form-control" />
 
 							</div>
