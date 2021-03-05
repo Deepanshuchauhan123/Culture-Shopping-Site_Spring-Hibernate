@@ -192,10 +192,11 @@
 
 						<tr>
 							<td>4</td>
-							<td><img class="adminDataTableImg"
+							<td><img class="adminDataTableImg" style="height:50px;"
 								src="${contextRoot}/resources/images/PRDMNO123PQRX.jpg"
 								alt="Macbook Pro" /></td>
 							<td>Macbook Pro</td>
+							<td>Apple</td>
 							<td>3</td>
 							<td>&#8377; 54000.00/-</td>
 							<td>
@@ -213,10 +214,11 @@
 
 						<tr>
 							<td>4</td>
-							<td><img class="adminDataTableImg"
+							<td><img class="adminDataTableImg" style="height:50px;"
 								src="${contextRoot}/resources/images/PRDMNO123PQRX.jpg"
 								alt="Macbook Pro" /></td>
 							<td>Macbook Pro</td>
+							<td>Apple</td>
 							<td>3</td>
 							<td>&#8377; 54000.00/-</td>
 							<td>
