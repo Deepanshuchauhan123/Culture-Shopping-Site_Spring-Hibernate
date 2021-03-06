@@ -103,6 +103,10 @@
 		<!-- DataTable Bootstrap Script 
 		<script src="${js}/dataTables.bootstrap.js"></script>
 -->
+
+		<!--  bootbox -->
+		<script src="${js}/bootbox.min.js"></script>
+
 		<script type="text/javascript"
 			src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.js"></script>
 		<script type="text/javascript"

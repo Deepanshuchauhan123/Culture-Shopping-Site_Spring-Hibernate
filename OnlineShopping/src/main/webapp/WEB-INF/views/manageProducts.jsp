@@ -206,8 +206,7 @@
 							</label>
 							</td>
 							<td><a href="${contextRoot}/manage/4/product"
-								class="btn-btn-waring"> <span
-									class="glyphicon glyphicon-pencil"></span>
+								class="btn btn-outline-primary"> <i class="fa fa-fw fa-edit"></i>
 							</a></td>
 						</tr>
 
@@ -228,8 +227,7 @@
 							</label>
 							</td>
 							<td><a href="${contextRoot}/manage/4/product"
-								class="btn-btn-waring"> <span
-									class="glyphicon glyphicon-pencil"></span>
+								class="btn btn-outline-primary"> <i class="fa fa-fw fa-edit"></i>
 							</a></td>
 						</tr>
 					</tbody>
