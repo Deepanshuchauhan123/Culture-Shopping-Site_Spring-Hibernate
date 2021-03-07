@@ -170,4 +170,79 @@ $(function() {
 
 					});
 
+	// datatable for Admin
+
+	var $adminProductsTable = $('#adminProductsTable');
+
+	// execute the below code only where we have this table
+
+	if ($adminProductsTable.length) {
+
+		var jsonUrl = window.contextRoot + '/json/data/admin/all/products';
+
+		$table
+				.DataTable({
+
+					lengthMenu : [
+							[ 10, 30, 50, -1 ],
+							[ '10 Records', '30 Records', '50 Records',
+									'All Records' ] ],
+					pageLength : 30,
+					ajax : {
+						url : jsonUrl,
+						dataSrc : ''
+					},
+
+					columns : [
+
+							{
+								data : 'id'
+							},
+							{
+
+								data : 'code',
+								bSortable : false,
+								mRender : function(data, type, row) {
+
+									return '<img src="'
+											+ window.contextRoot
+											+ '/resources/images/'
+											+ data
+											+ '.jpg" style="width:100px;height:100px;"/>';
+
+								}
+							},
+							{
+								data : 'name',
+							},
+							{
+								data : 'brand',
+							},
+							{
+								data : 'quantity',
+								mRender : function(data, type, row) {
+									if (data < 1) {
+										return '<span style="color: red">Out of stock!</span>';
+									}
+									return data;
+								}
+							}, {
+								data : 'unitPrice',
+								mRender : function(data, type, row) {
+									return '&#8377; ' + data
+								}
+
+							},
+
+							{
+								data : 'active',
+								bSortable : false,
+								mRender : function(data, type, row) {
+									var str = '';
+								}
+
+							} ]
+				});
+	}
+
 });
