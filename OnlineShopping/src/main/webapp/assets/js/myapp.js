@@ -226,7 +226,8 @@ $(function() {
 									}
 									return data;
 								}
-							}, {
+							},
+							{
 								data : 'unitPrice',
 								mRender : function(data, type, row) {
 									return '&#8377; ' + data
@@ -239,6 +240,19 @@ $(function() {
 								bSortable : false,
 								mRender : function(data, type, row) {
 									var str = '';
+
+									str += '<label class="switch">';
+									if (data) {
+
+										str += '<input type="checkbox" checked="checked" value="'
+												+ row.id + '"/>';
+									} else {
+										str += '<input type="checkbox" value="'
+												+ row.id + '"/>';
+
+									}
+									str += '<div class="slider"></div></label>';
+									return str;
 								}
 
 							} ]
