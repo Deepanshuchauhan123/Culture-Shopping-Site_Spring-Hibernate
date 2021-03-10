@@ -180,7 +180,7 @@ $(function() {
 
 		var jsonUrl = window.contextRoot + '/json/data/admin/all/products';
 
-		$table
+		$adminProductsTable
 				.DataTable({
 
 					lengthMenu : [
@@ -241,17 +241,30 @@ $(function() {
 								mRender : function(data, type, row) {
 									var str = '';
 
-									str += '<label class="switch">';
 									if (data) {
+										str += '<label class="switch"> <input type="checkbox" value="'
+												+ row.id
+												+ '" checked="checked">  <div class="slider round"> </div></label>';
 
-										str += '<input type="checkbox" checked="checked" value="'
-												+ row.id + '"/>';
 									} else {
-										str += '<input type="checkbox" value="'
-												+ row.id + '"/>';
-
+										str += '<label class="switch"> <input type="checkbox" value="'
+												+ row.id
+												+ '">  <div class="slider round"> </div></label>';
 									}
-									str += '<div class="slider"></div></label>';
+									return str;
+								}
+
+							},
+							{
+								data : 'id',
+								bSortable : false,
+								mRender : function(data, type, row) {
+									var str = '';
+
+									str += '<a href="${contextRoot}/manage/'
+											+ data
+											+ '/product" class="btn btn-outline-primary">';
+									str += '<i class="fa fa-fw fa-edit"></i></a>';
 									return str;
 								}
 
