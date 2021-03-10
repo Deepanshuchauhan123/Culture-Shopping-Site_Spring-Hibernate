@@ -133,42 +133,6 @@ $(function() {
 	}
 
 	// ----------------------
-	$('.switch input[type="checkbox"]')
-			.on(
-					'change',
-					function() {
-
-						var checkbox = $(this);
-						var checked = checkbox.prop('checked');
-
-						var dMsg = (checked) ? 'You want to activate the product?'
-								: 'You want to deactivate the product?';
-
-						var value = checkbox.prop('value');
-
-						bootbox
-								.confirm({
-									size : 'medium',
-									title : 'Product Activation & Deactivation',
-									message : dMsg,
-									callback : function(confirmed) {
-										if (confirmed) {
-											console.log(value);
-											bootbox
-													.alert({
-														size : 'medium',
-														title : 'Information',
-														message : 'You are going to perform operation on product '
-																+ value
-													});
-										} else {
-											checkbox.prop('checked', !checked);
-										}
-									}
-
-								});
-
-					});
 
 	// datatable for Admin
 
@@ -208,7 +172,7 @@ $(function() {
 											+ window.contextRoot
 											+ '/resources/images/'
 											+ data
-											+ '.jpg" style="width:100px;height:100px;"/>';
+											+ '.jpg" style="width:75px;height:75px;"/>';
 
 								}
 							},
@@ -268,7 +232,53 @@ $(function() {
 									return str;
 								}
 
-							} ]
+							} ],
+					initComplete : function() {
+						var api = this.api();
+						api
+								.$('.switch input[type="checkbox"]')
+								.on(
+										'change',
+										function() {
+
+											var checkbox = $(this);
+											var checked = checkbox
+													.prop('checked');
+
+											var dMsg = (checked) ? 'You want to activate the product?'
+													: 'You want to deactivate the product?';
+
+											var value = checkbox.prop('value');
+
+											bootbox
+													.confirm({
+														size : 'medium',
+														title : 'Product Activation & Deactivation',
+														message : dMsg,
+														callback : function(
+																confirmed) {
+															if (confirmed) {
+																console
+																		.log(value);
+																bootbox
+																		.alert({
+																			size : 'medium',
+																			title : 'Information',
+																			message : 'You are going to perform operation on product '
+																					+ value
+																		});
+															} else {
+																checkbox
+																		.prop(
+																				'checked',
+																				!checked);
+															}
+														}
+
+													});
+
+										});
+					}
 				});
 	}
 
