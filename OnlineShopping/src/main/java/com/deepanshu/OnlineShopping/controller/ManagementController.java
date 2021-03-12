@@ -12,9 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.deepanshu.OnlineShopping.util.FileUploadUtility;
@@ -66,7 +68,7 @@ public class ManagementController {
 			Model model, HttpServletRequest request) {
 
 		new ProductValidator().validate(mProduct, results);
-		
+
 		// check if their is any errors
 
 		if (results.hasErrors()) {
@@ -80,15 +82,29 @@ public class ManagementController {
 		logger.info(mProduct.toString());
 		// create a new product record
 		productDAO.add(mProduct);
-		
-		if(!mProduct.getFile().getOriginalFilename().equals(""))
-		{
-			FileUploadUtility.uploadFile(request,mProduct.getFile(),mProduct.getCode());
+
+		if (!mProduct.getFile().getOriginalFilename().equals("")) {
+			FileUploadUtility.uploadFile(request, mProduct.getFile(), mProduct.getCode());
 		}
-		
 
 		return "redirect:/manage/products?operation=product";
 
+	}
+
+	@RequestMapping(value = "/product/{id}/activation", method = RequestMethod.POST)
+	@ResponseBody
+	public String handleProductActivation(@PathVariable int id) {
+
+		Product product = productDAO.get(id);
+
+		boolean isActive = product.isActive();
+
+		product.setActive(!product.isActive());
+
+		productDAO.update(product);
+
+		return (isActive) ? "You have successfully deactivated the product with id " + product.getId()
+				: "You have successfully activated the product with id " + product.getId();
 	}
 
 	// returning all categories on request
