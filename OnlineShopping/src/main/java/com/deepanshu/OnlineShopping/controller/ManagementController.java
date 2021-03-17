@@ -62,6 +62,23 @@ public class ManagementController {
 		return mv;
 	}
 
+	@RequestMapping(value = "/{id}/product", method = RequestMethod.GET)
+	public ModelAndView showEditProducts(@PathVariable int id) {
+		ModelAndView mv = new ModelAndView("page");
+
+		mv.addObject("userClickManageProducts", true);
+		mv.addObject("title", "Manage Products");
+
+		// fetching the product from the database
+		Product nProduct = productDAO.get(id);
+
+		// set the product fetch from DB
+
+		mv.addObject("product", nProduct);
+
+		return mv;
+	}
+
 	// handling product submission
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public String handleProductSubmission(@Valid @ModelAttribute("product") Product mProduct, BindingResult results,

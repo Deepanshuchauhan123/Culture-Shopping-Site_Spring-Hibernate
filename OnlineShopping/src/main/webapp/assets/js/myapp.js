@@ -225,7 +225,7 @@ $(function() {
 								mRender : function(data, type, row) {
 									var str = '';
 
-									str += '<a href="${contextRoot}/manage/'
+									str += '<a href="'+window.contextRoot+'/manage/'
 											+ data
 											+ '/product" class="btn btn-outline-primary">';
 									str += '<i class="fa fa-fw fa-edit"></i></a>';
