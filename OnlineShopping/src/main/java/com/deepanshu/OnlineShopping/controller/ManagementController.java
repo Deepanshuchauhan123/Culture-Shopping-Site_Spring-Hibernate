@@ -98,8 +98,13 @@ public class ManagementController {
 
 		logger.info(mProduct.toString());
 		// create a new product record
-		productDAO.add(mProduct);
-
+		if (mProduct.getId() == 0) {
+			// creating new product if id is 0
+			productDAO.add(mProduct);
+		} else {
+			// update the product if id is not 0
+			productDAO.update(mProduct);
+		}
 		if (!mProduct.getFile().getOriginalFilename().equals("")) {
 			FileUploadUtility.uploadFile(request, mProduct.getFile(), mProduct.getCode());
 		}
