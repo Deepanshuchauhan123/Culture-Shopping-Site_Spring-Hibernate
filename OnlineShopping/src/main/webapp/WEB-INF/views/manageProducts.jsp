@@ -126,8 +126,20 @@
 
 							<div class="col-md-8">
 
-								<sf:select path="categoryId" id="categoryId"
-									items="${categories}" itemLabel="name" itemValue="id" />
+								<sf:select class="form-control" path="categoryId"
+									id="categoryId" items="${categories}" itemLabel="name"
+									itemValue="id" />
+
+								<c:if test="${product.id == 0}">
+									<br />
+									<div class="text-right">
+										<button type="button" data-togggle="modal"
+											data-target="myCategoryModal" class="btn btn-warning btn-xs">Add
+											Category</button>
+									</div>
+								</c:if>
+
+
 							</div>
 
 						</div>
@@ -252,4 +264,29 @@
 		</div>
 
 	</div>
+
+
+	<div class="modal fade" id="myCategoryModal" role="dialog"
+		tabindex="-1">
+
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">Add New Category</h4>
+				</div>
+				<div class="modal-body">
+					<!-- Category Form -->
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
 </div>
