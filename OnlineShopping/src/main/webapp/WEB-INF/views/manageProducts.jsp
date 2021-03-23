@@ -1,4 +1,5 @@
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+
 <div class="container">
 
 	<div class="row">
@@ -131,11 +132,13 @@
 									itemValue="id" />
 
 								<c:if test="${product.id == 0}">
-									<br />
+
 									<div class="text-right">
-										<button type="button" data-togggle="modal"
-											data-target="myCategoryModal" class="btn btn-warning btn-xs">Add
-											Category</button>
+										<br />
+										<button type="button" class="btn btn-warning btn-xs"
+											data-toggle="modal" data-target="#myCategoryModal">Add
+											New Category</button>
+
 									</div>
 								</c:if>
 
@@ -265,7 +268,6 @@
 
 	</div>
 
-
 	<div class="modal fade" id="myCategoryModal" role="dialog"
 		tabindex="-1">
 
@@ -274,13 +276,38 @@
 			<div class="modal-content">
 				<!-- Modal Header -->
 				<div class="modal-header">
+					<h5 class="modal-title">Add New Category</h5>
 					<button type="button" class="close" data-dismiss="modal">
 						<span>&times;</span>
 					</button>
-					<h4 class="modal-title">Add New Category</h4>
+
 				</div>
 				<div class="modal-body">
 					<!-- Category Form -->
+
+					<sf:form modelAttribute="category"
+						action="${contextRoot}/manage/category" method="POST"
+						class="form-horizontal">
+
+						<div class="form-group">
+							<label for="category_name" class="control-label col-md-4">Category
+								Name</label>
+							<div class="col-md-8">
+								<sf:input type="text" path="name" id="category_name"
+									class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="category_description" class="control-label col-md-4">Category
+								Description</label>
+							<div class="col-md-8">
+								<sf:textarea cols="" rows="5" path="description"
+									id="category_description" class="form-control" />
+							</div>
+						</div>
+
+
+					</sf:form>
 				</div>
 
 			</div>
