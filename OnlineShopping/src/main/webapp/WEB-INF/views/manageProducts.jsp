@@ -290,18 +290,18 @@
 						class="form-horizontal">
 						<!-- Category Name -->
 						<div class="form-group">
-							<label for="category_name" class="control-label col-md-4">Category
+							<label for="category_name" class="control-label col-md-8">Category
 								Name</label>
-							<div class="col-md-8">
+							<div class="col-md-12">
 								<sf:input type="text" path="name" id="category_name"
 									class="form-control" />
 							</div>
 						</div>
 						<!-- Category Description -->
 						<div class="form-group">
-							<label for="category_description" class="control-label col-md-4">Category
+							<label for="category_description" class="control-label col-md-8">Category
 								Description</label>
-							<div class="col-md-8">
+							<div class="col-md-12">
 								<sf:textarea cols="" rows="5" path="description"
 									id="category_description" class="form-control" />
 							</div>

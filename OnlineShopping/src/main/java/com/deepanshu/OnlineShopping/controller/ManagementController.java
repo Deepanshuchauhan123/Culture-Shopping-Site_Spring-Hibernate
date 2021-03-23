@@ -56,6 +56,8 @@ public class ManagementController {
 		if (operation != null) {
 			if (operation.equals("product")) {
 				mv.addObject("message", "Product Submitted Successfully!");
+			} else if (operation.equals("category")) {
+				mv.addObject("message", "Category Submitted Successfully!");
 			}
 		}
 
@@ -137,8 +139,11 @@ public class ManagementController {
 
 	// to handle category submission
 	@RequestMapping(value = "/category", method = RequestMethod.POST)
-	public String handleCategorySubmission() {
-		
+	public String handleCategorySubmission(@ModelAttribute Category category) {
+		// add the new category
+		categoryDAO.add(category);
+
+		return "redirect:/manage/products?operation=category";
 	}
 
 	// returning all categories on request
