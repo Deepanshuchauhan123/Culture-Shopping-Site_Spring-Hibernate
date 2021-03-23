@@ -135,9 +135,22 @@ public class ManagementController {
 				: "You have successfully activated the product with id " + product.getId();
 	}
 
+	// to handle category submission
+	@RequestMapping(value = "/category", method = RequestMethod.POST)
+	public String handleCategorySubmission() {
+		
+	}
+
 	// returning all categories on request
 	@ModelAttribute("categories")
 	public List<Category> getCategories() {
 		return categoryDAO.list();
 	}
+
+	// create a new category for adding new category
+	@ModelAttribute("category")
+	public Category getCategory() {
+		return new Category();
+	}
+
 }

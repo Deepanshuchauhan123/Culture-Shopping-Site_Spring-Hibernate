@@ -283,12 +283,12 @@
 
 				</div>
 				<div class="modal-body">
-					<!-- Category Form -->
 
+					<!-- Category Form -->
 					<sf:form modelAttribute="category"
 						action="${contextRoot}/manage/category" method="POST"
 						class="form-horizontal">
-
+						<!-- Category Name -->
 						<div class="form-group">
 							<label for="category_name" class="control-label col-md-4">Category
 								Name</label>
@@ -297,6 +297,7 @@
 									class="form-control" />
 							</div>
 						</div>
+						<!-- Category Description -->
 						<div class="form-group">
 							<label for="category_description" class="control-label col-md-4">Category
 								Description</label>
@@ -305,7 +306,14 @@
 									id="category_description" class="form-control" />
 							</div>
 						</div>
+						<!-- Submit Button -->
+						<div class="form-group">
 
+							<div class="col-md-offset-col-4 md-8">
+								<input type="submit" value="Add Category"
+									class="btn btn-primary" />
+							</div>
+						</div>
 
 					</sf:form>
 				</div>
