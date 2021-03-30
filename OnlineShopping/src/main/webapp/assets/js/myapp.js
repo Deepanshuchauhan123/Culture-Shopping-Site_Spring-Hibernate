@@ -326,7 +326,9 @@ $(function() {
 			},
 			errorElement : "em",
 			errorPlacement : function(error, element) {
-				errorPlacement(error, element);
+				error.addClass('help-block');
+
+				error.insertAfter(element);
 			}
 		}
 
