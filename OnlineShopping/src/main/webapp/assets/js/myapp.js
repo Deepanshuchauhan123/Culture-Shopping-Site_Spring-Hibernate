@@ -312,7 +312,7 @@ $(function() {
 				description : {
 					required : true,
 					minlength : 3
-				}
+				} 
 			},
 			messages : {
 				name : {
