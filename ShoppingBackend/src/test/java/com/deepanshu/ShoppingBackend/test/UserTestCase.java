@@ -22,7 +22,7 @@ public class UserTestCase {
 	@BeforeClass
 	public static void init() {
 		context = new AnnotationConfigApplicationContext();
-		context.scan("com.deepanshu.shoppingbackend");
+		context.scan("com.deepanshu.ShoppingBackend");
 		context.refresh();
 
 		userDAO = (UserDAO) context.getBean("userDAO");
@@ -40,6 +40,46 @@ public class UserTestCase {
 
 		// add the user
 		assertEquals("failed to add user!", true, userDAO.addUser(user));
+
+		address = new Address();
+		address.setAddressLineOne("B-528, Ganpati Vihar");
+		address.setAddressLineTwo("Tijara Phatak");
+		address.setCity("Alwar");
+		address.setState("Rajasthan");
+		address.setCountry("India");
+		address.setPostalCode("301001");
+		address.setBilling(true);
+
+		// link the user with the address using user id
+		address.setUserId(user.getId());
+
+		assertEquals("Failed to add address!", true, userDAO.addAdress(address));
+
+		if (user.getRole().equals("USER")) {
+			// create a cart for this user
+			cart = new Cart();
+			cart.setUserId(user.getId());
+
+			// add the cart
+			assertEquals("Failed to add cart!", true, userDAO.addCart(cart));
+
+			// add a shipping address for this user
+
+			address = new Address();
+			address.setAddressLineOne("B-528, Ganpati Vihar");
+			address.setAddressLineTwo("Tijara Phatak");
+			address.setCity("Alwar");
+			address.setState("Rajasthan");
+			address.setCountry("India");
+			address.setPostalCode("301001");
+			address.setShipping(true);
+
+			// link it with the user
+			address.setUserId(user.getId());
+
+			assertEquals("Failed to add shipping address!", true, userDAO.addAdress(address));
+
+		}
 
 	}
 
