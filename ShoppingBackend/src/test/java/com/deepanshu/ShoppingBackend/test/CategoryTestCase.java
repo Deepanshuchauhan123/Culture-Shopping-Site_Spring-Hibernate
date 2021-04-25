@@ -25,7 +25,7 @@ public class CategoryTestCase {
 		context.scan("com.deepanshu.ShoppingBackend");
 		context.refresh();
 
-		categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
+		categoryDAO = (CategoryDAO)context.getBean("categoryDAO");
 	}
 
 	/*
@@ -87,7 +87,7 @@ public class CategoryTestCase {
 		category = new Category();
 
 		category.setName("Laptop");
-		category.setDescription("THis is desp of Laptop");
+		category.setDescription("This is desp of Laptop");
 		category.setImageURL("Laptop-img.jsp");
 
 		assertEquals("Successfully added a category inside the table!", true, categoryDAO.add(category));
@@ -95,7 +95,7 @@ public class CategoryTestCase {
 		category = new Category();
 
 		category.setName("Television");
-		category.setDescription("THis is desp of television");
+		category.setDescription("This is desp of television");
 		category.setImageURL("television-img.jsp");
 
 		assertEquals("Successfully added a category inside the table!", true, categoryDAO.add(category));
