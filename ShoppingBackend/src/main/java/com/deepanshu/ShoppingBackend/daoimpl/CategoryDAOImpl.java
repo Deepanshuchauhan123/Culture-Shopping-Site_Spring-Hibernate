@@ -6,11 +6,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.deepanshu.ShoppingBackend.dao.CategoryDAO;
 import com.deepanshu.ShoppingBackend.dto.Category;
 
+@Service
 @Repository("categoryDAO")
 @Transactional
 public class CategoryDAOImpl implements CategoryDAO {

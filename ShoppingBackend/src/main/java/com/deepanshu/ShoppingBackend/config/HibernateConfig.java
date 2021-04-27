@@ -44,7 +44,7 @@ public class HibernateConfig {
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(getDataSource());
-		sessionFactory.setPackagesToScan("com.deepanshu.ShoppingBackend.dto");
+		sessionFactory.setPackagesToScan("com.deepanshu.ShoppingBackend");
 
 		sessionFactory.setHibernateProperties(getHibernateProperties());
 
@@ -72,7 +72,7 @@ public class HibernateConfig {
 		properties.put("hibernate.show_sql", true);
 		properties.put("hibernate.format_sql", "true");
 
-		properties.put("hibernate.hbm2ddl.auto", "create");
+		//properties.put("hibernate.hbm2ddl.auto", "create");
 		
 		return properties;
 	}
