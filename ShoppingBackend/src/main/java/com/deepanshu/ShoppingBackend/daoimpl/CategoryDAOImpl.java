@@ -20,6 +20,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+	
 	@Override
 	public List<Category> list() {
 		String selectActiveCategory = "FROM Category WHERE active = :active";

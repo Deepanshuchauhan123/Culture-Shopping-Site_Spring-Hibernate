@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.deepanshu.ShoppingBackend.config.HibernateConfig;
 import com.deepanshu.ShoppingBackend.dao.CategoryDAO;
 import com.deepanshu.ShoppingBackend.dto.Category;
 
@@ -27,6 +28,8 @@ public class CategoryTestCase {
 
 		categoryDAO = (CategoryDAO)context.getBean("categoryDAO");
 	}
+
+	
 
 	/*
 	 * @Test public void testAddCategory() {

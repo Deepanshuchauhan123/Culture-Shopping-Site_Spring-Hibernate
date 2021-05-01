@@ -15,22 +15,30 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	/*-----------------*/
-	@OneToOne
-	@JoinColumn(name = "uid")
-	private User user;
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+	// @OneToOne
+	// @JoinColumn(name = "uid")
+	// private User user;
+	//
+	// public User getUser() {
+	// return user;
+	// }
+	//
+	// public void setUser(User user) {
+	// this.user = user;
+	// }
+	@Column(name = "user_id")
+	private int userId;
 
 	@Column(name = "grand_total")
 	private double grandTotal;
 	@Column(name = "cart_lines")
 	private int cartLines;
+
+	@Override
+	public String toString() {
+		return "Cart [id=" + id + ", userId=" + userId + ", grandTotal=" + grandTotal + ", cartLines=" + cartLines
+				+ "]";
+	}
 
 	public int getId() {
 		return id;
@@ -38,6 +46,14 @@ public class Cart {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 	public double getGrandTotal() {
@@ -54,11 +70,6 @@ public class Cart {
 
 	public void setCartLines(int cartLines) {
 		this.cartLines = cartLines;
-	}
-
-	@Override
-	public String toString() {
-		return "Cart [id=" + id + ", user=" + user + ", grandTotal=" + grandTotal + ", cartLines=" + cartLines + "]";
 	}
 
 }

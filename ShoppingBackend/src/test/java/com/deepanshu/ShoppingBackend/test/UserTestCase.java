@@ -58,7 +58,7 @@ public class UserTestCase {
 		if (user.getRole().equals("USER")) {
 			// create a cart for this user
 			cart = new Cart();
-			cart.setUser(user);
+			cart.setUserId(user.getId());
 
 			// add the cart
 			assertEquals("Failed to add cart!", true, userDAO.addCart(cart));
@@ -72,6 +72,7 @@ public class UserTestCase {
 			address.setState("Rajasthan");
 			address.setCountry("India");
 			address.setPostalCode("301001");
+			// set shipping trrue
 			address.setShipping(true);
 
 			// link it with the user

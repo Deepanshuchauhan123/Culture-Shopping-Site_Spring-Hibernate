@@ -16,6 +16,7 @@
 	<!-- backend dao impl -->
 	<context:component-scan
 		base-package="com.deepanshu.ShoppingBackend" />
+		
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
