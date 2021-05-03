@@ -85,7 +85,7 @@ public class UserTestCase {
 	}
 	*/
 	
-	@Test
+	/*@Test
 	public void testAdd() 
 	{
 		user = new User();
@@ -108,6 +108,22 @@ public class UserTestCase {
 		
 		// add the user
 		assertEquals("failed to add user!", true, userDAO.addUser(user));
+	}*/
+	
+	
+	@Test
+	public void testUpdateCart()
+	{
+		//fetch user by email
+		user = userDAO.getByEmail("abc@gmail.com");
+		
+		//get the cart of the user
+		cart = user.getCart();
+		
+		cart.setGrandTotal(2345);
+		cart.setCartLines(2);
+		
+		assertEquals("Failed to update the cart",true, userDAO.updateCart(cart));
 	}
 
 }
