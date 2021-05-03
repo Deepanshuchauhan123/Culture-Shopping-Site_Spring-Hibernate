@@ -9,9 +9,12 @@ public interface UserDAO {
 	//add a user
 	boolean addUser(User user);
 	
+	//getting by email
+	User getByEmail(String email);
+	
 	//add an address
 	boolean addAdress(Address address);
 	
 	//add a cart
-	boolean addCart(Cart cart);
+	boolean updateCart(Cart cart);
 }
