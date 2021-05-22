@@ -59,7 +59,7 @@
 
 		<div class="content">
 			<div class="container">
-				<h3>This will be trigger by flow</h3>
+				<h3>This will be trigger by flows</h3>
 
 			</div>
 		</div>
