@@ -7,6 +7,7 @@
 
 	<!-- getting user class to pass into the spring form of signup-personal -->
 	<var name="user" class="com.deepanshu.ShoppingBackend.dto.User" />
+	<var name="billing" class="com.deepanshu.ShoppingBackend.dto.Address" />
 
 	<!-- Start State -->
 
@@ -15,10 +16,20 @@
 		<!-- on getting billing move to billing id page -->
 		<transition on="billing" to="billing" />
 	</view-state>
+	
 	<view-state id="billing"
-		view="flows/register/signup-billing"></view-state>
+		view="flows/register/signup-billing" model="billing">
+		<transition on="personal" to="personal"/>
+		<transition on="confirm" to="confirm"/>
+		</view-state>
+		
 	<view-state id="confirm"
-		view="flows/register/signup-confirm"></view-state>
+		view="flows/register/signup-confirm">
+		<transition on="personal" to="personal"/>
+		<transition on="billing" to="billing"/>
+		<transition on="success" to="success"/>
+
+		</view-state>
 
 	<!-- End State -->
 
